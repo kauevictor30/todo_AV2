@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DetailView, DeleteView
 from django.urls import reverse_lazy  
 from .models import Tarefa
 from .forms import TarefaForm
@@ -19,6 +19,12 @@ class TarefaUpdateView(UpdateView):
     form_class = TarefaForm
     template_name = 'tarefa_form.html'
     success_url = reverse_lazy('tarefa_list')
+
+class TarefaDetailView(DeleteView):
+    model = Tarefa
+    template_name = 'tarefa_detail.html'
+    context_object_name = 'tarefa'
+
 
 class TarefaDeleteView(DeleteView):
     model = Tarefa

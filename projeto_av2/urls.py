@@ -10,6 +10,8 @@ urlpatterns = [
     path('criar/', views.TarefaCreateView.as_view(), name='tarefa_create'),
     
     path('editar/<int:pk>/', views.TarefaUpdateView.as_view(), name='tarefa_update'),
+
+    path('visualizar/<int:pk>/', views.TarefaDetailView.as_view(), name='tarefa_detail'),
     
     path('excluir/<int:pk>/', views.TarefaDeleteView.as_view(), name='tarefa_delete'),
 ]
